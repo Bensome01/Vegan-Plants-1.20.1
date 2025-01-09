@@ -2,6 +2,7 @@ package net.Winston.feather_crop;
 
 import com.mojang.logging.LogUtils;
 
+import net.Winston.feather_crop.Block.BlockRegistry;
 import net.Winston.feather_crop.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -24,6 +25,9 @@ public class FeatherCrop {
 
     public FeatherCrop() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModItems.register(modEventBus);
+        BlockRegistry.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
