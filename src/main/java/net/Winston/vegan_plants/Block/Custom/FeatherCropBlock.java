@@ -56,7 +56,7 @@ public class FeatherCropBlock extends CropBlock{
          p_58239_.destroyBlock(p_58240_, true, p_58241_);
       }
 
-      if (this.getAge(p_58238_) == 5 && !p_58239_.isClientSide) {
+      if (this.getAge(p_58238_) == MAX_AGE && !p_58239_.isClientSide) {
          if (p_58241_ instanceof LivingEntity) {
             LivingEntity livingentity = (LivingEntity)p_58241_;
             livingentity.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 200));
