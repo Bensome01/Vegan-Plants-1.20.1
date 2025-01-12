@@ -1,6 +1,6 @@
 package net.Winston.vegan_plants.Block;
 
-import net.Winston.vegan_plants.FeatherCrop;
+import net.Winston.vegan_plants.VeganPlants;
 import net.Winston.vegan_plants.Block.Custom.FeatherCropBlock;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -11,7 +11,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class BlockRegistry {
     public static final DeferredRegister<Block> BLOCKS =
-            DeferredRegister.create(ForgeRegistries.BLOCKS, FeatherCrop.MOD_ID);
+            DeferredRegister.create(ForgeRegistries.BLOCKS, VeganPlants.MOD_ID);
 
     public static final RegistryObject<Block> FEATHER_CROP = BLOCKS.register("feather_crop",
             () -> new FeatherCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion().noCollission()));
