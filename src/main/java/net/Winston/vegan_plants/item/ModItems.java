@@ -10,7 +10,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
-            DeferredRegister.create(ForgeRegistries.ITEMS, FeatherCrop.MOD_ID);
+            DeferredRegister.create(ForgeRegistries.ITEMS, VeganPlants.MOD_ID);
 
     public static final RegistryObject<Item> FEATHER_SEEDS = ITEMS.register("feather_seeds",
             () -> new ItemNameBlockItem(BlockRegistry.FEATHER_CROP.get(), new Item.Properties()));
