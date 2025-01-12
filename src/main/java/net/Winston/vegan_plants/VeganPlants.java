@@ -3,7 +3,7 @@ package net.Winston.vegan_plants;
 import com.mojang.logging.LogUtils;
 
 import net.Winston.vegan_plants.Block.BlockRegistry;
-import net.Winston.vegan_plants.item.ModItems;
+import net.Winston.vegan_plants.item.ItemRegistry;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -26,7 +26,7 @@ public class VeganPlants {
     public VeganPlants() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        ModItems.register(modEventBus);
+        ItemRegistry.register(modEventBus);
         BlockRegistry.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
@@ -42,7 +42,7 @@ public class VeganPlants {
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
-            event.accept(ModItems.FEATHER_SEEDS);
+            event.accept(ItemRegistry.FEATHER_SEEDS);
         }
     }
 

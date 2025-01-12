@@ -1,6 +1,6 @@
 package net.Winston.vegan_plants.Block.Custom;
 
-import net.Winston.vegan_plants.item.ModItems;
+import net.Winston.vegan_plants.item.ItemRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -27,7 +27,7 @@ public class FeatherCropBlock extends CropBlock{
 
     @Override
     protected ItemLike getBaseSeedId() {
-        return ModItems.FEATHER_SEEDS.get();
+        return ItemRegistry.FEATHER_SEEDS.get();
     }
 
     @Override
