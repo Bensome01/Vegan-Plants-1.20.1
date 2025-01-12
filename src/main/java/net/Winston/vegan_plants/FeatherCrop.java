@@ -1,9 +1,9 @@
-package net.Winston.feather_crop;
+package net.Winston.vegan_plants;
 
 import com.mojang.logging.LogUtils;
 
-import net.Winston.feather_crop.Block.BlockRegistry;
-import net.Winston.feather_crop.item.ModItems;
+import net.Winston.vegan_plants.Block.BlockRegistry;
+import net.Winston.vegan_plants.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -20,7 +20,7 @@ import org.slf4j.Logger;
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(FeatherCrop.MOD_ID)
 public class FeatherCrop {
-    public static final String MOD_ID = "feather_crop";
+    public static final String MOD_ID = "vegan_plants";
     public static final Logger LOGGER = LogUtils.getLogger();
 
     public FeatherCrop() {

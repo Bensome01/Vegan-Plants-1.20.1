@@ -1,7 +1,7 @@
-package net.Winston.feather_crop.Block;
+package net.Winston.vegan_plants.Block;
 
-import net.Winston.feather_crop.FeatherCrop;
-import net.Winston.feather_crop.Block.Custom.FeatherCropBlock;
+import net.Winston.vegan_plants.FeatherCrop;
+import net.Winston.vegan_plants.Block.Custom.FeatherCropBlock;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.eventbus.api.IEventBus;

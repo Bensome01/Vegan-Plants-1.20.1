@@ -1,6 +1,6 @@
-package net.Winston.feather_crop.Block.Custom;
+package net.Winston.vegan_plants.Block.Custom;
 
-import net.Winston.feather_crop.item.ModItems;
+import net.Winston.vegan_plants.item.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;

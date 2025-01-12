@@ -1,7 +1,7 @@
-package net.Winston.feather_crop.item;
+package net.Winston.vegan_plants.item;
 
-import net.Winston.feather_crop.*;
-import net.Winston.feather_crop.Block.BlockRegistry;
+import net.Winston.vegan_plants.*;
+import net.Winston.vegan_plants.Block.BlockRegistry;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
