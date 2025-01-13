@@ -19,7 +19,7 @@
                     "block": "vegan_plants:feather_crop",
                     "condition": "minecraft:block_state_property",
                     "properties": {
-                      "age": "7"
+                      "age": "15"
                     }
                   }
                 ],
@@ -41,7 +41,7 @@
             "block": "vegan_plants:feather_crop",
             "condition": "minecraft:block_state_property",
             "properties": {
-              "age": "7"
+              "age": "15"
             }
           }
         ],
@@ -71,7 +71,7 @@
             "block": "vegan_plants:feather_crop",
             "condition": "minecraft:block_state_property",
             "properties": {
-              "age": "7"
+              "age": "15"
             }
           }
         ],
