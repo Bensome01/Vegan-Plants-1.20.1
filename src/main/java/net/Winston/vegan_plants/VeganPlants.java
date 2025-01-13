@@ -36,7 +36,9 @@ public class VeganPlants {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-
+        event.enqueueWork(() -> {
+            ComposterRegistry.registerCompost();
+        });
     }
 
     // Add the example block item to the building blocks tab

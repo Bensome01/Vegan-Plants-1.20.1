@@ -15,7 +15,6 @@ public class ItemRegistry {
     public static final RegistryObject<Item> FEATHER_SEEDS = ITEMS.register("feather_seeds",
             () -> new ItemNameBlockItem(BlockRegistry.FEATHER_CROP.get(), new Item.Properties()));
 
-
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
