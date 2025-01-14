@@ -1,3 +1,5 @@
 {
-    "item.vegan_plants.feather_seeds": "Feather Seeds"
+    "item.vegan_plants.feather_seeds": "Feather Seeds",
+
+    "tooltip.vegan_plants.feather_seeds.tooltip": "Grows in high places"
 }
