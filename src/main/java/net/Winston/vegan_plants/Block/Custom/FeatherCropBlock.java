@@ -2,7 +2,13 @@ package net.Winston.vegan_plants.Block.Custom;
 
 import net.Winston.vegan_plants.VeganPlantsConfig;
 import net.Winston.vegan_plants.item.ItemRegistry;
+import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.network.chat.MutableComponent;
+import net.minecraft.network.chat.contents.LiteralContents;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
@@ -11,6 +17,7 @@ import net.minecraft.world.entity.monster.Ravager;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -19,6 +26,7 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.common.IPlantable;
 
 public class FeatherCropBlock extends CropBlock{
     public static final int MAX_AGE = 15;
@@ -71,12 +79,6 @@ public class FeatherCropBlock extends CropBlock{
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
         pBuilder.add(AGE);
     }
-    
-    @Override
-    protected boolean mayPlaceOn(BlockState p_52302_, BlockGetter p_52303_, BlockPos p_52304_) {
-        return p_52304_.getY() >= VeganPlantsConfig.MINIMUM_FEATHER_CROP_y.get()
-            && super.mayPlaceOn(p_52302_, p_52303_, p_52304_);
-    }
 
     @Override
     public void entityInside(BlockState p_58238_, Level p_58239_, BlockPos p_58240_, Entity p_58241_) {
@@ -91,5 +93,21 @@ public class FeatherCropBlock extends CropBlock{
          }
 
       }
+    }
+
+    @Override
+    public boolean isValidBonemealTarget(LevelReader p_255715_, BlockPos p_52259_, BlockState p_52260_, boolean p_52261_)
+    {
+        return p_52259_.getY() >= VeganPlantsConfig.MINIMUM_FEATHER_CROP_y.get()
+            && super.isValidBonemealTarget(p_255715_, p_52259_, p_52260_, p_52261_);
+    }
+
+    @Override
+    public void randomTick(BlockState p_221050_, ServerLevel p_221051_, BlockPos p_221052_, RandomSource p_221053_) {
+        if(p_221052_.getY() < VeganPlantsConfig.MINIMUM_FEATHER_CROP_y.get())
+        {
+            return;
+        }
+        super.randomTick(p_221050_, p_221051_, p_221052_, p_221053_);
     }
 }
