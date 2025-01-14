@@ -1,5 +1,6 @@
 package net.Winston.vegan_plants.Block.Custom;
 
+import net.Winston.vegan_plants.VeganPlantsConfig;
 import net.Winston.vegan_plants.item.ItemRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -73,7 +74,8 @@ public class FeatherCropBlock extends CropBlock{
     
     @Override
     protected boolean mayPlaceOn(BlockState p_52302_, BlockGetter p_52303_, BlockPos p_52304_) {
-        return p_52304_.getY() >= 100 && super.mayPlaceOn(p_52302_, p_52303_, p_52304_);
+        return p_52304_.getY() >= VeganPlantsConfig.MINIMUM_FEATHER_CROP_y.get()
+            && super.mayPlaceOn(p_52302_, p_52303_, p_52304_);
     }
 
     @Override
