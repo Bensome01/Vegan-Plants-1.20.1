@@ -2,11 +2,7 @@ package net.Winston.vegan_plants.Block.Custom;
 
 import net.Winston.vegan_plants.VeganPlantsConfig;
 import net.Winston.vegan_plants.item.ItemRegistry;
-import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
-import net.minecraft.network.chat.MutableComponent;
-import net.minecraft.network.chat.contents.LiteralContents;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -26,7 +22,6 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.common.IPlantable;
 
 public class FeatherCropBlock extends CropBlock{
     public static final int MAX_AGE = 15;
