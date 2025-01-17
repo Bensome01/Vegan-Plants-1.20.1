@@ -20,10 +20,12 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePrope
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraftforge.registries.RegistryObject;
 
-public class VeganPlantsLootTables extends BlockLootSubProvider {
-    public VeganPlantsLootTables() {
+public class VeganPlantsBlockLootTables extends BlockLootSubProvider {
+    public VeganPlantsBlockLootTables() {
         super(Set.of(), FeatureFlags.REGISTRY.allFlags());
     }
+
+    //VanillaBlockLoot
 
     @Override
     protected void generate()
@@ -48,7 +50,7 @@ public class VeganPlantsLootTables extends BlockLootSubProvider {
         /* Loot Table of feather crop
          * does not drop from explosions
          * if age=15 drop feather
-         * always drop seeds
+         * always drop seed
          * additional chance of 2 feathers 0.33% (affected by fortune)
          * additional chance of 1 seed 0.2% (affected by fortune)
          */
