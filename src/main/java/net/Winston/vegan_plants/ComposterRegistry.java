@@ -1,13 +1,14 @@
 package net.Winston.vegan_plants;
 
 import java.util.function.Supplier;
+
 import net.Winston.vegan_plants.item.ItemRegistry;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.ComposterBlock;
 
 public class ComposterRegistry {
-    public static void registerCompost()
-    {
+
+    public static void registerCompost() {
         register(ItemRegistry.FEATHER_SEEDS, 0.3f);
     }
 
