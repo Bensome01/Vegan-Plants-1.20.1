@@ -85,8 +85,8 @@ public class FeatherCropBlock extends CropBlock {
             if (p_58241_ instanceof LivingEntity) {
                 LivingEntity livingentity = (LivingEntity) p_58241_;
                 livingentity.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 200));
+                livingentity.resetFallDistance();
             }
-
         }
     }
 
