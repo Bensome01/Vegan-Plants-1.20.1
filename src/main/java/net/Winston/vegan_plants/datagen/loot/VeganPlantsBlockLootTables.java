@@ -18,6 +18,7 @@ import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
 import net.minecraftforge.registries.RegistryObject;
 
 public class VeganPlantsBlockLootTables extends BlockLootSubProvider {
@@ -33,11 +34,15 @@ public class VeganPlantsBlockLootTables extends BlockLootSubProvider {
          LootItemCondition.Builder lootitemcondition$builder = LootItemBlockStatePropertyCondition
                 .hasBlockStateProperties(BlockRegistry.FEATHER_CROP.get())
                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(FeatherCropBlock.AGE, 15));
+
         this.add(BlockRegistry.FEATHER_CROP.get(),
             featherCropLootTable(BlockRegistry.FEATHER_CROP.get(),
-            Items.FEATHER,
-            ItemRegistry.FEATHER_SEEDS.get(),
-            lootitemcondition$builder));
+                Items.FEATHER,
+                ItemRegistry.FEATHER_SEEDS.get(),
+                lootitemcondition$builder));
+
+        this.add(BlockRegistry.WILD_FEATHER.get(),
+            createWildFeatherDrops(BlockRegistry.WILD_FEATHER.get()));
     }
 
     @Override
@@ -72,4 +77,10 @@ public class VeganPlantsBlockLootTables extends BlockLootSubProvider {
                             .addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.2f, 1)))));
     }
 
+    protected LootTable.Builder createWildFeatherDrops(Block block) {
+      return createShearsDispatchTable(block,
+        this.applyExplosionDecay(block, LootItem.lootTableItem(ItemRegistry.FEATHER_SEEDS.get())
+            .when(LootItemRandomChanceCondition.randomChance(0.125F))
+            .apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE, 2))));
+    }
 }
