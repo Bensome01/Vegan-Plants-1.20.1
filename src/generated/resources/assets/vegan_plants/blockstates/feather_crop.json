@@ -1,0 +1,52 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "vegan_plants:block/feather_crop_stage0"
+    },
+    "age=1": {
+      "model": "vegan_plants:block/feather_crop_stage0"
+    },
+    "age=10": {
+      "model": "vegan_plants:block/feather_crop_stage3"
+    },
+    "age=11": {
+      "model": "vegan_plants:block/feather_crop_stage3"
+    },
+    "age=12": {
+      "model": "vegan_plants:block/feather_crop_stage3"
+    },
+    "age=13": {
+      "model": "vegan_plants:block/feather_crop_stage3"
+    },
+    "age=14": {
+      "model": "vegan_plants:block/feather_crop_stage3"
+    },
+    "age=15": {
+      "model": "vegan_plants:block/feather_crop_stage0"
+    },
+    "age=2": {
+      "model": "vegan_plants:block/feather_crop_stage1"
+    },
+    "age=3": {
+      "model": "vegan_plants:block/feather_crop_stage1"
+    },
+    "age=4": {
+      "model": "vegan_plants:block/feather_crop_stage1"
+    },
+    "age=5": {
+      "model": "vegan_plants:block/feather_crop_stage1"
+    },
+    "age=6": {
+      "model": "vegan_plants:block/feather_crop_stage2"
+    },
+    "age=7": {
+      "model": "vegan_plants:block/feather_crop_stage2"
+    },
+    "age=8": {
+      "model": "vegan_plants:block/feather_crop_stage2"
+    },
+    "age=9": {
+      "model": "vegan_plants:block/feather_crop_stage2"
+    }
+  }
+}
