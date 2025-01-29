@@ -30,7 +30,7 @@ public class VeganPlantsBlockLootTables extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-        LootItemCondition.Builder lootitemcondition$builder = LootItemBlockStatePropertyCondition
+        LootItemCondition.Builder lootItemConditionBuilder = LootItemBlockStatePropertyCondition
                 .hasBlockStateProperties(BlockRegistry.FEATHER_CROP.get())
                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(FeatherCropBlock.AGE, 15));
 
@@ -38,7 +38,7 @@ public class VeganPlantsBlockLootTables extends BlockLootSubProvider {
                 featherCropLootTable(BlockRegistry.FEATHER_CROP.get(),
                         Items.FEATHER,
                         ItemRegistry.FEATHER_SEEDS.get(),
-                        lootitemcondition$builder));
+                        lootItemConditionBuilder));
 
         this.add(BlockRegistry.WILD_FEATHER.get(),
                 createWildFeatherDrops(BlockRegistry.WILD_FEATHER.get()));
