@@ -1,7 +1,0 @@
-{
-    "parent": "minecraft:block/crop",
-    "textures": {
-      "crop": "vegan_plants:block/feather_stage4"
-    },
-    "render_type": "cutout"
-  }
