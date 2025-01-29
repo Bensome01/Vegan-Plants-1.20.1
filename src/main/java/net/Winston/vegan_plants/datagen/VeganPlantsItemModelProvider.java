@@ -14,12 +14,12 @@ public class VeganPlantsItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        var resource1 = new ResourceLocation("item/generated");
-        var resource2 = new ResourceLocation(VeganPlants.MOD_ID,
+        var parentResource = new ResourceLocation("item/generated");
+        var featherSeedPath = new ResourceLocation(VeganPlants.MOD_ID,
             "item/" + ItemRegistry.FEATHER_SEEDS.getId().getPath());
 
-        withExistingParent(ItemRegistry.FEATHER_SEEDS.getId().getPath(), resource1)
-            .texture("layer0", resource2);
+        withExistingParent(ItemRegistry.FEATHER_SEEDS.getId().getPath(), parentResource)
+            .texture("layer0", featherSeedPath);
     }
 
     // private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
