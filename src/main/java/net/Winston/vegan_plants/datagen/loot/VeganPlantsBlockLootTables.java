@@ -26,23 +26,22 @@ public class VeganPlantsBlockLootTables extends BlockLootSubProvider {
         super(Set.of(), FeatureFlags.REGISTRY.allFlags());
     }
 
-    //VanillaBlockLoot
+    // VanillaBlockLoot
 
     @Override
-    protected void generate()
-    {
-         LootItemCondition.Builder lootitemcondition$builder = LootItemBlockStatePropertyCondition
+    protected void generate() {
+        LootItemCondition.Builder lootitemcondition$builder = LootItemBlockStatePropertyCondition
                 .hasBlockStateProperties(BlockRegistry.FEATHER_CROP.get())
                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(FeatherCropBlock.AGE, 15));
 
         this.add(BlockRegistry.FEATHER_CROP.get(),
-            featherCropLootTable(BlockRegistry.FEATHER_CROP.get(),
-                Items.FEATHER,
-                ItemRegistry.FEATHER_SEEDS.get(),
-                lootitemcondition$builder));
+                featherCropLootTable(BlockRegistry.FEATHER_CROP.get(),
+                        Items.FEATHER,
+                        ItemRegistry.FEATHER_SEEDS.get(),
+                        lootitemcondition$builder));
 
         this.add(BlockRegistry.WILD_FEATHER.get(),
-            createWildFeatherDrops(BlockRegistry.WILD_FEATHER.get()));
+                createWildFeatherDrops(BlockRegistry.WILD_FEATHER.get()));
     }
 
     @Override
@@ -50,9 +49,10 @@ public class VeganPlantsBlockLootTables extends BlockLootSubProvider {
         return BlockRegistry.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;
     }
 
-    protected LootTable.Builder featherCropLootTable(Block block, Item feather, Item seeds, LootItemCondition.Builder condition)
-    {
-        /* Loot Table of feather crop
+    protected LootTable.Builder featherCropLootTable(Block block, Item feather, Item seeds,
+            LootItemCondition.Builder condition) {
+        /*
+         * Loot Table of feather crop
          * does not drop from explosions
          * if age=15 drop feather
          * always drop seed
@@ -60,27 +60,27 @@ public class VeganPlantsBlockLootTables extends BlockLootSubProvider {
          * additional chance of 1 seed 0.2% (affected by fortune)
          */
         return this.applyExplosionDecay(block, LootTable.lootTable()
-            .withPool(LootPool.lootPool()
-                .add(LootItem.lootTableItem(feather)
-                    .when(condition)
-                    .otherwise(LootItem.lootTableItem(seeds))))
-            .withPool(LootPool.lootPool()
-                .when(condition)
-                .add(LootItem.lootTableItem(feather)
-                    .apply(ApplyBonusCount
-                        .addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.33f, 2))))
-            .withPool(LootPool.lootPool()
-                .add(LootItem.lootTableItem(seeds))
-                    .when(condition)
-                    .add(LootItem.lootTableItem(seeds)
-                        .apply(ApplyBonusCount
-                            .addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.2f, 1)))));
+                .withPool(LootPool.lootPool()
+                        .add(LootItem.lootTableItem(feather)
+                                .when(condition)
+                                .otherwise(LootItem.lootTableItem(seeds))))
+                .withPool(LootPool.lootPool()
+                        .when(condition)
+                        .add(LootItem.lootTableItem(feather)
+                                .apply(ApplyBonusCount
+                                        .addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.33f, 2))))
+                .withPool(LootPool.lootPool()
+                        .add(LootItem.lootTableItem(seeds))
+                        .when(condition)
+                        .add(LootItem.lootTableItem(seeds)
+                                .apply(ApplyBonusCount
+                                        .addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.2f, 1)))));
     }
 
     protected LootTable.Builder createWildFeatherDrops(Block block) {
-      return createShearsDispatchTable(block,
-        this.applyExplosionDecay(block, LootItem.lootTableItem(ItemRegistry.FEATHER_SEEDS.get())
-            .when(LootItemRandomChanceCondition.randomChance(0.125F))
-            .apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE, 2))));
+        return createShearsDispatchTable(block,
+                this.applyExplosionDecay(block, LootItem.lootTableItem(ItemRegistry.FEATHER_SEEDS.get())
+                        .when(LootItemRandomChanceCondition.randomChance(0.125F))
+                        .apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE, 2))));
     }
 }

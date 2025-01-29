@@ -11,7 +11,6 @@ import java.util.Set;
 public class VeganPlantsLootTableProvider {
     public static LootTableProvider create(PackOutput output) {
         return new LootTableProvider(output, Set.of(), List.of(
-                new LootTableProvider.SubProviderEntry(VeganPlantsBlockLootTables::new, LootContextParamSets.BLOCK)
-        ));
+                new LootTableProvider.SubProviderEntry(VeganPlantsBlockLootTables::new, LootContextParamSets.BLOCK)));
     }
 }
