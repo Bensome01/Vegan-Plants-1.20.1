@@ -7,12 +7,15 @@ import net.minecraft.data.PackOutput;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
+import net.minecraftforge.client.model.generators.VariantBlockStateBuilder.PartialBlockstate;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.Winston.vegan_plants.Block.BlockRegistry;
 import net.Winston.vegan_plants.Block.Custom.FeatherCropBlock;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.block.state.properties.Property;
 
 public class VeganPlantsBlockStateProvider extends BlockStateProvider {
     public VeganPlantsBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
@@ -22,45 +25,67 @@ public class VeganPlantsBlockStateProvider extends BlockStateProvider {
     @Override
     public void registerStatesAndModels()
     {
-        this.featherCropBlock(BlockRegistry.FEATHER_CROP);
+        Integer[] featherCropConditions = new Integer[16];
+        for(int i = 0; i < 16; i++)
+        {
+            featherCropConditions[i] = i;
+        }
+        int[] featherCropModelSelection = {0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4};
+
+        this.genericCropBlock(BlockRegistry.FEATHER_CROP,
+            FeatherCropBlock.AGE,
+            featherCropConditions,
+            featherCropModelSelection,
+            5);
+    }
+        
+    private <T extends Comparable<T>> void genericCropBlock(RegistryObject<Block> crop,
+        Property<T> prop,
+        T[] values,
+        int[] selectedModels,
+        int modelCount)
+    {
+        //produces the model jsons and puts them in an array for blockstate declaration
+        ConfiguredModel[] models = this.makeCropModels(crop, modelCount);
+
+        //produces the blockstate json
+        makeCropBlockStates(crop, prop, values, selectedModels, models);
+    }
+        
+        private static String getBlockName(Block block) {
+            return ForgeRegistries.BLOCKS.getKey(block).getPath();
     }
 
-    private void featherCropBlock(RegistryObject<Block> crop)
+    private <T extends Comparable<T>> void makeCropBlockStates(RegistryObject<Block> crop,
+        Property<T> prop,
+        T[] values,
+        int[] selectedModels,
+        ConfiguredModel[] models)
+    {
+        var builder = this.getVariantBuilder(crop.get());
+        for(int i = 0; i < values.length; i++)
+        {
+            builder.partialState().with(prop, values[i]).addModels(models[selectedModels[i]]);
+        }
+    }
+
+    private ConfiguredModel[] makeCropModels(RegistryObject<Block> crop, int modelCount)
     {
         //get name of block from registry
         String name = getBlockName(crop.get());
+
         //produces the model jsons and puts them in an array for blockstate usage
         Function<Integer, ModelFile> model = i ->this.models()
             .crop(name + "_stage" + i, this.modLoc("block/" + name + "_stage" + i))
             .renderType("cutout");
-        ConfiguredModel[] models = new ConfiguredModel[5];
-        for(int i = 0; i < 5; i++)
+        
+        ConfiguredModel[] models = new ConfiguredModel[modelCount];
+        for(int i = 0; i < modelCount; i++)
         {
             models[i] = new ConfiguredModel(model.apply(i));
         }
 
-        //produces the blockstate json
-        this.getVariantBuilder(crop.get())
-            .partialState().with(FeatherCropBlock.AGE, 0).addModels(models[0])
-            .partialState().with(FeatherCropBlock.AGE, 1).addModels(models[0])
-            .partialState().with(FeatherCropBlock.AGE, 2).addModels(models[1])
-            .partialState().with(FeatherCropBlock.AGE, 3).addModels(models[1])
-            .partialState().with(FeatherCropBlock.AGE, 4).addModels(models[1])
-            .partialState().with(FeatherCropBlock.AGE, 5).addModels(models[1])
-            .partialState().with(FeatherCropBlock.AGE, 6).addModels(models[2])
-            .partialState().with(FeatherCropBlock.AGE, 7).addModels(models[2])
-            .partialState().with(FeatherCropBlock.AGE, 8).addModels(models[2])
-            .partialState().with(FeatherCropBlock.AGE, 9).addModels(models[2])
-            .partialState().with(FeatherCropBlock.AGE, 10).addModels(models[3])
-            .partialState().with(FeatherCropBlock.AGE, 11).addModels(models[3])
-            .partialState().with(FeatherCropBlock.AGE, 12).addModels(models[3])
-            .partialState().with(FeatherCropBlock.AGE, 13).addModels(models[3])
-            .partialState().with(FeatherCropBlock.AGE, 14).addModels(models[3])
-            .partialState().with(FeatherCropBlock.AGE, 15).addModels(models[4]);
-    }
-
-    private static String getBlockName(Block block) {
-        return ForgeRegistries.BLOCKS.getKey(block).getPath();
+        return models;
     }
 
     // private void wildBerryBush(RegistryObject<Block> bush) {
