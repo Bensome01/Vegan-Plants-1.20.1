@@ -33,6 +33,15 @@ public class VeganPlantsBlockStateProvider extends BlockStateProvider {
                 featherCropConditions,
                 featherCropModelSelection,
                 5);
+
+        //simpleBlock(what are we rendering, what does the model actually say)
+        this.simpleBlock(
+                BlockRegistry.WILD_FEATHER.get(),
+                models()
+                    .cross(
+                        blockTexture(BlockRegistry.WILD_FEATHER.get()).getPath(),
+                        blockTexture(BlockRegistry.WILD_FEATHER.get()))
+                    .renderType("cutout"));
     }
 
     private <T extends Comparable<T>> void genericCropBlock(RegistryObject<Block> crop,
