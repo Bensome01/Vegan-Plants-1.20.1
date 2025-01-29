@@ -20,7 +20,7 @@ public class BlockRegistry {
             () -> new FeatherCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion().noCollission()));
 
     public static final RegistryObject<Block> WILD_FEATHER = BLOCKS.register("wild_feather",
-            () -> new WildFeatherBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
+            () -> new WildFeatherBlock(BlockBehaviour.Properties.copy(Blocks.GRASS).noCollission().noOcclusion()));
 
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
