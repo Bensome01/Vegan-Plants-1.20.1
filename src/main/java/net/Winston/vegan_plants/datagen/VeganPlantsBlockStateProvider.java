@@ -56,7 +56,7 @@ public class VeganPlantsBlockStateProvider extends BlockStateProvider {
             .partialState().with(FeatherCropBlock.AGE, 12).addModels(models[3])
             .partialState().with(FeatherCropBlock.AGE, 13).addModels(models[3])
             .partialState().with(FeatherCropBlock.AGE, 14).addModels(models[3])
-            .partialState().with(FeatherCropBlock.AGE, 15).addModels(models[0]);
+            .partialState().with(FeatherCropBlock.AGE, 15).addModels(models[4]);
     }
 
     private static String getBlockName(Block block) {

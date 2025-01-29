@@ -22,7 +22,7 @@
       "model": "vegan_plants:block/feather_crop_stage3"
     },
     "age=15": {
-      "model": "vegan_plants:block/feather_crop_stage0"
+      "model": "vegan_plants:block/feather_crop_stage4"
     },
     "age=2": {
       "model": "vegan_plants:block/feather_crop_stage1"
