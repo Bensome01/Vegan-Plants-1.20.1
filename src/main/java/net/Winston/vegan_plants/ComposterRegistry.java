@@ -10,6 +10,7 @@ public class ComposterRegistry {
 
     public static void registerCompost() {
         register(ItemRegistry.FEATHER_SEEDS, 0.3f);
+        register(ItemRegistry.WILD_FEATHER, 0.3f);
     }
 
     private static void register(Supplier<? extends Item> item, float chance) {
