@@ -35,7 +35,7 @@ public class VeganPlantsBlockStateProvider extends BlockStateProvider {
                 5);
 
         //simpleBlock(what are we rendering, what does the model actually say)
-        this.simpleBlock(
+        this.simpleBlockWithItem(
                 BlockRegistry.WILD_FEATHER.get(),
                 models()
                     .cross(
