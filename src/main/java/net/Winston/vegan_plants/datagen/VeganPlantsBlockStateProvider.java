@@ -4,6 +4,7 @@ import java.util.function.Function;
 
 import net.Winston.vegan_plants.VeganPlants;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -12,6 +13,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.Winston.vegan_plants.Block.BlockRegistry;
 import net.Winston.vegan_plants.Block.Custom.FeatherCropBlock;
+import net.Winston.vegan_plants.item.ItemRegistry;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.Property;
 
@@ -35,13 +37,12 @@ public class VeganPlantsBlockStateProvider extends BlockStateProvider {
                 5);
 
         //simpleBlock(what are we rendering, what does the model actually say)
-        this.simpleBlockWithItem(
-                BlockRegistry.WILD_FEATHER.get(),
-                models()
-                    .cross(
-                        blockTexture(BlockRegistry.WILD_FEATHER.get()).getPath(),
-                        blockTexture(BlockRegistry.WILD_FEATHER.get()))
-                    .renderType("cutout"));
+        this.simpleBlock(BlockRegistry.WILD_FEATHER.get(),
+            models()
+            .cross(
+                blockTexture(BlockRegistry.WILD_FEATHER.get()).getPath(),
+                blockTexture(BlockRegistry.WILD_FEATHER.get()))
+            .renderType("cutout"));
     }
 
     private <T extends Comparable<T>> void genericCropBlock(RegistryObject<Block> crop,

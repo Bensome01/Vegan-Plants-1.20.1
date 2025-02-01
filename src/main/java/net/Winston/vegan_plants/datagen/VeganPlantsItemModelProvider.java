@@ -1,6 +1,7 @@
 package net.Winston.vegan_plants.datagen;
 
 import net.Winston.vegan_plants.VeganPlants;
+import net.Winston.vegan_plants.Block.BlockRegistry;
 import net.Winston.vegan_plants.item.ItemRegistry;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -17,9 +18,22 @@ public class VeganPlantsItemModelProvider extends ItemModelProvider {
         var parentResource = new ResourceLocation("item/generated");
         var featherSeedPath = new ResourceLocation(VeganPlants.MOD_ID,
             "item/" + ItemRegistry.FEATHER_SEEDS.getId().getPath());
+        var wildFeatherPath = new ResourceLocation(VeganPlants.MOD_ID,
+            "block/" + ItemRegistry.WILD_FEATHER.getId().getPath());
 
         withExistingParent(ItemRegistry.FEATHER_SEEDS.getId().getPath(), parentResource)
             .texture("layer0", featherSeedPath);
+
+        withExistingParent(ItemRegistry.WILD_FEATHER.getId().getPath(), parentResource)
+            .texture("layer0", wildFeatherPath);
+    // models()
+    // .singleTexture(
+    //     blockTexture(BlockRegistry.WILD_FEATHER.get()).getPath(),
+    //     new ResourceLocation("item/generated"),
+    //     "layer0",
+    //     new ResourceLocation(VeganPlants.MOD_ID,
+    //         "item/" + ItemRegistry.WILD_FEATHER.getId().getPath()))
+    // .renderType("cutout")
     }
 
     // private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

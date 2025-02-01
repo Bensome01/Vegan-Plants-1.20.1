@@ -1,3 +1,6 @@
 {
-  "parent": "vegan_plants:block/wild_feather"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "vegan_plants:block/wild_feather"
+  }
 }
