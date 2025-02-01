@@ -50,6 +50,7 @@ public class VeganPlants {
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
             event.accept(ItemRegistry.FEATHER_SEEDS);
+            event.accept(ItemRegistry.WILD_FEATHER);
         }
     }
 
