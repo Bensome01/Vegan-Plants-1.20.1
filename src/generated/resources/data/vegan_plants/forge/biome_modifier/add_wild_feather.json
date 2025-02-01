@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_mountain",
+  "features": "vegan_plants:wild_feather_placed_key",
+  "step": "vegetal_decoration"
+}

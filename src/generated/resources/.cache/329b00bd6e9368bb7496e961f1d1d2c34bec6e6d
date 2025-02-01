@@ -1,7 +1,10 @@
-// 1.20.1	2025-01-28T19:13:04.5535318	Block States: vegan_plants
+// 1.20.1	2025-01-31T22:54:51.760395	Block States: vegan_plants
 6d870c12edc5b8c3e21e7a43916369ab5546a10a assets/vegan_plants/blockstates/feather_crop.json
+1f32757716f0e3fdaf29745c46443903fbc67022 assets/vegan_plants/blockstates/wild_feather.json
 b2ea6402a547175acd22aff1b6af4f6194bb3da6 assets/vegan_plants/models/block/feather_crop_stage0.json
 cc47c49c800793c9cce1e1c73a6ecd847a8fcdd0 assets/vegan_plants/models/block/feather_crop_stage1.json
 951484bd437853de0479e6d57e0979342c15b5a6 assets/vegan_plants/models/block/feather_crop_stage2.json
 f5cf461dbea26a568a074c36448691992831bb0c assets/vegan_plants/models/block/feather_crop_stage3.json
 9b96e617f5b878a08c89bacb7c02c623936c78c6 assets/vegan_plants/models/block/feather_crop_stage4.json
+faa7daa445742044947c4761c788d1f68423dd3c assets/vegan_plants/models/block/wild_feather.json
+8c35f4d9b67d0e7e8a0565e0f21bd0a69a66ef50 assets/vegan_plants/models/item/wild_feather.json
