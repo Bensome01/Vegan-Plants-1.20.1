@@ -1,5 +1,7 @@
 {
     "item.vegan_plants.feather_seeds": "Feather Seeds",
 
-    "tooltip.vegan_plants.feather_seeds.tooltip": "Grows in high places"
+    "tooltip.vegan_plants.feather_seeds.tooltip": "Grows in high places",
+
+    "block.vegan_plants.wild_feather": "Wild Feather"
 }
