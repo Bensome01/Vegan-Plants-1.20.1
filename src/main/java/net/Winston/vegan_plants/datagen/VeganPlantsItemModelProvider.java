@@ -1,7 +1,6 @@
 package net.Winston.vegan_plants.datagen;
 
 import net.Winston.vegan_plants.VeganPlants;
-import net.Winston.vegan_plants.Block.BlockRegistry;
 import net.Winston.vegan_plants.item.ItemRegistry;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;

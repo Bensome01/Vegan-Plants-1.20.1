@@ -5,7 +5,6 @@ import net.Winston.vegan_plants.VeganPlants;
 import net.Winston.vegan_plants.item.Custom.FeatherSeeds;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;

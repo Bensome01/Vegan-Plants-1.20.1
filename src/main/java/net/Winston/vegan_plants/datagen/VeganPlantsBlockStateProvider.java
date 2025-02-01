@@ -4,7 +4,6 @@ import java.util.function.Function;
 
 import net.Winston.vegan_plants.VeganPlants;
 import net.minecraft.data.PackOutput;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -13,7 +12,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.Winston.vegan_plants.Block.BlockRegistry;
 import net.Winston.vegan_plants.Block.Custom.FeatherCropBlock;
-import net.Winston.vegan_plants.item.ItemRegistry;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.Property;
 
