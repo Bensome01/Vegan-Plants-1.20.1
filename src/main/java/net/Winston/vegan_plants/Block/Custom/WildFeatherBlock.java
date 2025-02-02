@@ -1,5 +1,6 @@
 package net.Winston.vegan_plants.Block.Custom;
 
+import net.Winston.vegan_plants.VeganPlantsConfig;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
@@ -16,7 +17,7 @@ public class WildFeatherBlock extends TallGrassBlock {
     @Override
     public boolean canSurvive(BlockState p_51028_, LevelReader p_51029_, BlockPos p_51030_)
     {
-        if(p_51030_.getY() < 100)
+        if(p_51030_.getY() < VeganPlantsConfig.MINIMUM_WILD_FEATHER_y.get())
         {
             return false;
         }

@@ -6,6 +6,7 @@ public class VeganPlantsConfig {
     public static ForgeConfigSpec GENERAL_SPEC;
     public static ForgeConfigSpec.IntValue MINIMUM_FEATHER_CROP_y;
     public static ForgeConfigSpec.ConfigValue<Integer> FEATHER_FALL_DURATION;
+    public static ForgeConfigSpec.IntValue MINIMUM_WILD_FEATHER_y;
 
     static
     {
@@ -24,6 +25,11 @@ public class VeganPlantsConfig {
             FEATHER_FALL_DURATION = builder
                 .comment("Tick duration of feather fall effect gratned by matured feather crop")
                 .define("tick duration", 200);
+        builder.pop();
+        builder.push("Wild Feather");
+            MINIMUM_WILD_FEATHER_y = builder
+                .comment("Minimum y that Wild feather can be placed (this effects world gen)")
+                .defineInRange("Min_y", 100, -64, 320);
         builder.pop();
     }
 }
