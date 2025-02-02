@@ -1,5 +1,7 @@
 package net.Winston.vegan_plants.worldgen;
 
+import java.util.List;
+
 import net.Winston.vegan_plants.VeganPlants;
 import net.Winston.vegan_plants.Block.BlockRegistry;
 import net.minecraft.core.registries.Registries;
@@ -8,6 +10,7 @@ import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
@@ -23,13 +26,11 @@ public class VeganPlantsConfiguredFeatures {
             new ConfiguredFeature<>(
                 Feature.RANDOM_PATCH,
                 //there is probably a builder for this but this works
-                FeatureUtils.simpleRandomPatchConfiguration(
-                    32,
-                    PlacementUtils.onlyWhenEmpty(
-                        Feature.SIMPLE_BLOCK,
-                        new SimpleBlockConfiguration(BlockStateProvider.simple(BlockRegistry.WILD_FEATHER.get()))
-                    )
-                )
+                FeatureUtils.simplePatchConfiguration(
+                    Feature.SIMPLE_BLOCK,
+                    new SimpleBlockConfiguration(BlockStateProvider
+                        .simple(BlockRegistry.WILD_FEATHER.get())),
+                    List.of(Blocks.GRASS_BLOCK))
             )
         );
     }
