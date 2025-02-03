@@ -6,6 +6,7 @@ import com.mojang.logging.LogUtils;
 
 import net.Winston.vegan_plants.Block.BlockRegistry;
 import net.Winston.vegan_plants.item.ItemRegistry;
+import net.Winston.vegan_plants.loot.ModLootModifiers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -33,6 +34,7 @@ public class VeganPlants {
         ItemRegistry.register(modEventBus);
         BlockRegistry.register(modEventBus);
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, VeganPlantsConfig.GENERAL_SPEC, "vegan_plants.toml");
+        ModLootModifiers.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 

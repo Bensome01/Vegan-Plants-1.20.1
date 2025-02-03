@@ -1,0 +1,16 @@
+{
+  "entries": [
+    "vegan_plants:feather_seeds_in_jungle_temple",
+    "vegan_plants:feather_seeds_in_shipwreck_map",
+    "vegan_plants:feather_seeds_in_abandoned_mineshaft",
+    "vegan_plants:feather_seeds_in_woodland_mansion",
+    "vegan_plants:feather_seeds_in_shipwreck_supply",
+    "vegan_plants:feather_seeds_in_simple_dungeon",
+    "vegan_plants:feather_seeds_in_igloo_chest",
+    "vegan_plants:feather_seeds_in_pillager_outpost",
+    "vegan_plants:feather_seeds_in_shipwreck_treasure",
+    "vegan_plants:feather_seeds_in_buried_treasure",
+    "vegan_plants:feather_seeds_in_desert_pyramid"
+  ],
+  "replace": false
+}

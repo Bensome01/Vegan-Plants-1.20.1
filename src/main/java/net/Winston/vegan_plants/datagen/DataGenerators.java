@@ -27,5 +27,6 @@ public class DataGenerators {
         generator.addProvider(event.includeClient(), new VeganPlantsItemModelProvider(packOutput, existingFileHelper));
 
         generator.addProvider(event.includeServer(), new VeganPlantsWorldGenProvider(packOutput, lookupProvider));
+        generator.addProvider(event.includeServer(), new VeganPlantsGlobalLootModifiersProvider(packOutput));
     }
 }

@@ -1,0 +1,10 @@
+{
+  "type": "vegan_plants:add_item",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:chest/desert_pyramid"
+    }
+  ],
+  "item": "vegan_plants:feather_seeds"
+}
