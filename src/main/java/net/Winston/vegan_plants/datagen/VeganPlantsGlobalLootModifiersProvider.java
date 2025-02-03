@@ -63,5 +63,9 @@ public class VeganPlantsGlobalLootModifiersProvider extends GlobalLootModifierPr
                 ItemRegistry.FEATHER_SEEDS.get()));
         }
         
+        // // The probably way
+        // var thing = new AnyOfCondition.Builder(new LootTableIdCondition.Builder(
+        //     new ResourceLocation(chestPaths[0]))).build();
+
     }
 }
