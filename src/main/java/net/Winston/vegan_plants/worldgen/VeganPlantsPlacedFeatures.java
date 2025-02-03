@@ -31,7 +31,7 @@ public class VeganPlantsPlacedFeatures {
                 configuredFeatures
                     .getOrThrow(VeganPlantsConfiguredFeatures.WILD_FEATHER_KEY),
                 List.of(
-                    RarityFilter.onAverageOnceEvery(150),
+                    RarityFilter.onAverageOnceEvery(100),
                     InSquarePlacement.spread(),
                     PlacementUtils.HEIGHTMAP,
                     BiomeFilter.biome())));
