@@ -19,6 +19,7 @@ import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
+import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraftforge.registries.RegistryObject;
 
 public class VeganPlantsBlockLootTables extends BlockLootSubProvider {
@@ -78,9 +79,17 @@ public class VeganPlantsBlockLootTables extends BlockLootSubProvider {
     }
 
     protected LootTable.Builder createWildFeatherDrops(Block block) {
-        return createShearsDispatchTable(block,
-                this.applyExplosionDecay(block, LootItem.lootTableItem(ItemRegistry.FEATHER_SEEDS.get())
-                        .when(LootItemRandomChanceCondition.randomChance(0.125F))
-                        .apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE, 2))));
+        var seeds = ItemRegistry.FEATHER_SEEDS.get();
+        return LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(block)
+                                .when(HAS_SHEARS)
+                                .otherwise(LootItem.lootTableItem(seeds)
+                                        .apply(ApplyBonusCount
+                                                .addUniformBonusCount(Enchantments.BLOCK_FORTUNE, 2))
+                                        .when(LootItemRandomChanceCondition.randomChance(0.5f))
+                                        .otherwise(LootItem.lootTableItem(Items.FEATHER)
+                                                .apply(ApplyBonusCount
+                                                        .addUniformBonusCount(Enchantments.BLOCK_FORTUNE, 2))))));
     }
 }
