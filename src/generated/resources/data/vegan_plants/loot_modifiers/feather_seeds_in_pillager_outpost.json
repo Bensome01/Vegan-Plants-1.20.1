@@ -4,6 +4,10 @@
     {
       "condition": "forge:loot_table_id",
       "loot_table_id": "minecraft:chests/pillager_outpost"
+    },
+    {
+      "chance": 0.1365,
+      "condition": "minecraft:random_chance"
     }
   ],
   "item": "vegan_plants:feather_seeds"
