@@ -3,7 +3,7 @@
   "conditions": [
     {
       "condition": "forge:loot_table_id",
-      "loot_table_id": "minecraft:chest/shipwreck_map"
+      "loot_table_id": "minecraft:chests/shipwreck_map"
     }
   ],
   "item": "vegan_plants:feather_seeds"

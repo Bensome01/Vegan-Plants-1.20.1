@@ -49,7 +49,7 @@ public class VeganPlantsGlobalLootModifiersProvider extends GlobalLootModifierPr
         String[] chestPaths = new String[selectedChests.length];
         for(int i = 0; i < selectedChests.length; i++)
         {
-            chestPaths[i] = "chest/".concat(selectedChests[i]);
+            chestPaths[i] = "chests/".concat(selectedChests[i]);
         }
 
         for(int i = 0; i < selectedChests.length; i++)
@@ -58,7 +58,8 @@ public class VeganPlantsGlobalLootModifiersProvider extends GlobalLootModifierPr
                 new AddItemModifier(new LootItemCondition[]
                 {
                     new LootTableIdCondition.Builder(
-                        new ResourceLocation(chestPaths[i])).build()
+                        new ResourceLocation(chestPaths[i])).build(),
+                    LootItemRandomChanceCondition.randomChance(0.1365f).build()
                 },
                 ItemRegistry.FEATHER_SEEDS.get()));
         }

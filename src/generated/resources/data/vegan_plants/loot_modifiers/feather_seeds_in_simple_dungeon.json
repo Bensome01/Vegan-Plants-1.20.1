@@ -3,7 +3,7 @@
   "conditions": [
     {
       "condition": "forge:loot_table_id",
-      "loot_table_id": "minecraft:chest/simple_dungeon"
+      "loot_table_id": "minecraft:chests/simple_dungeon"
     }
   ],
   "item": "vegan_plants:feather_seeds"
