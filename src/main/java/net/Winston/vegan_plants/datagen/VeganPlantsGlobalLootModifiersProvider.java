@@ -6,7 +6,7 @@ import java.util.List;
 
 import net.Winston.vegan_plants.VeganPlants;
 import net.Winston.vegan_plants.item.ItemRegistry;
-import net.Winston.vegan_plants.loot.AddItemModifier;
+import net.Winston.vegan_plants.loot.AddLootTableModifier;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -55,13 +55,12 @@ public class VeganPlantsGlobalLootModifiersProvider extends GlobalLootModifierPr
         for(int i = 0; i < selectedChests.length; i++)
         {
             add("feather_seeds_in_" + selectedChests[i],
-                new AddItemModifier(new LootItemCondition[]
+                new AddLootTableModifier(new LootItemCondition[]
                 {
                     new LootTableIdCondition.Builder(
-                        new ResourceLocation(chestPaths[i])).build(),
-                    LootItemRandomChanceCondition.randomChance(0.1365f).build()
+                        new ResourceLocation(chestPaths[i])).build()
                 },
-                ItemRegistry.FEATHER_SEEDS.get()));
+                new ResourceLocation(VeganPlants.MOD_ID, "chests/feather_seeds_in_chests")));
         }
         
         // // The probably way
