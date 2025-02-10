@@ -5,6 +5,9 @@ import net.minecraftforge.common.ForgeConfigSpec;
 public class VeganPlantsConfig {
     public static ForgeConfigSpec GENERAL_SPEC;
     public static ForgeConfigSpec.IntValue MINIMUM_FEATHER_CROP_y;
+    public static ForgeConfigSpec.ConfigValue<Integer> FEATHER_FALL_DURATION;
+    public static ForgeConfigSpec.IntValue MINIMUM_WILD_FEATHER_y;
+    public static ForgeConfigSpec.BooleanValue GENERATE_FEATHER_SEEDS_CHEST_LOOT;
 
     static
     {
@@ -20,6 +23,21 @@ public class VeganPlantsConfig {
             MINIMUM_FEATHER_CROP_y = builder
                 .comment("Minimum_Y that feather crop can grow")
                 .defineInRange("Min_Y", 100, -64, 320);
+            FEATHER_FALL_DURATION = builder
+                .comment("Tick duration of feather fall effect gratned by matured feather crop")
+                .define("tick duration", 200);
+        builder.pop();
+        builder.push("Wild Feather");
+            MINIMUM_WILD_FEATHER_y = builder
+                .comment("Minimum y that Wild feather can be placed (this effects world gen)")
+                .defineInRange("Min_y", 100, -64, 320);
+        builder.pop();
+        builder.push("Chest Loot");
+            builder.push("Feather Seeds");
+                GENERATE_FEATHER_SEEDS_CHEST_LOOT = builder
+                    .comment("Whether feather seeds can generate in chest loot")
+                    .define("generate", true);
+            builder.pop();
         builder.pop();
     }
 }

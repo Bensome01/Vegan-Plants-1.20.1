@@ -84,7 +84,7 @@ public class FeatherCropBlock extends CropBlock {
         if (this.getAge(p_58238_) == MAX_AGE && !p_58239_.isClientSide) {
             if (p_58241_ instanceof LivingEntity) {
                 LivingEntity livingentity = (LivingEntity) p_58241_;
-                livingentity.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 200));
+                livingentity.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, VeganPlantsConfig.FEATHER_FALL_DURATION.get()));
                 livingentity.resetFallDistance();
             }
         }
